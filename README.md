@@ -1,11 +1,27 @@
 # Mobile IFrame Tester
 
+> **Projeto de exemplo.** Este repositório existe só como exemplo e para testes. O foco é validar as **permissões de câmera e microfone** em uma WebView, para quem vai **integrar a Conexa Saúde** ao próprio app. Não é uma biblioteca nem um app de produção.
+
 App React Native para testar aplicações web **embarcadas em um app mobile** (WebView). Você digita uma URL e o app abre essa URL numa WebView configurada como a de um app real: câmera e microfone liberados, vídeo inline e autoplay, sem cache e em modo anônimo.
 
-Use para validar, antes de integrar no seu app, se o seu site funciona dentro de uma WebView no Android e no iOS. Isso inclui fluxos com câmera e microfone, como teleconsulta.
+## Para que serve
+
+Para integrar a Conexa Saúde, você embarca no seu app a aplicação web de teleconsulta. Essa aplicação precisa de câmera e microfone dentro da WebView, e o seu app precisa:
+
+1. declarar as permissões nativas (Android: `AndroidManifest.xml`; iOS: `Info.plist`);
+2. pedir as permissões ao usuário;
+3. configurar a WebView para liberar mídia (`getUserMedia`), reprodução inline e autoplay.
+
+Este projeto mostra uma implementação mínima dessas três etapas. Com ele você pode:
+
+- **testar** a URL de integração da Conexa Saúde no Android e no iOS e confirmar que câmera e microfone funcionam dentro da WebView;
+- **usar como referência** e copiar para o seu app as permissões e as props da WebView. Veja [Configuração da WebView](#configuração-da-webview) e [Permissões](#permissões).
+
+Se a teleconsulta funciona aqui e não funciona no seu app, compare as permissões e as props da WebView dos dois.
 
 ## Sumário
 
+- [Para que serve](#para-que-serve)
 - [Requisitos](#requisitos)
 - [Instalação](#instalação)
 - [Rodando o app](#rodando-o-app)
